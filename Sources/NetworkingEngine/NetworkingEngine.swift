@@ -6,7 +6,7 @@ public class NetWorkingEngine {
     /// - Parameters:
     ///     - endpoint: the endpoint to make HTTP request
     ///     - completion: the call back method
-    class func request<T: Codable>(endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> ()) {
+    public class func request<T: Codable>(endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> ()) {
         // 1 configure url
         var components = URLComponents()
         components.scheme = endpoint.scheme
