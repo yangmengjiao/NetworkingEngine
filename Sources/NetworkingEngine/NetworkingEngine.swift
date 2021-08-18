@@ -1,12 +1,15 @@
 import Foundation
 
+public protocol NetWorkingEngineProtocol {
+    static func request<T: Codable>(endpoint: EndpointProtocol, completion: @escaping (Result<T, Error>) -> ())
+}
 
-public class NetWorkingEngine {
+public class NetWorkingEngine: NetWorkingEngineProtocol {
     /// Executes web calls and decode the JSON response into Codeable objects
     /// - Parameters:
     ///     - endpoint: the endpoint to make HTTP request
     ///     - completion: the call back method
-    public class func request<T: Codable>(endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> ()) {
+    public class func request<T: Codable>(endpoint: EndpointProtocol, completion: @escaping (Result<T, Error>) -> ()) {
         // 1 configure url
         var components = URLComponents()
         components.scheme = endpoint.scheme

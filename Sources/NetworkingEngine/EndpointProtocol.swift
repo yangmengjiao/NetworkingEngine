@@ -1,5 +1,5 @@
 //
-//  Endpoint.swift
+//  EndpointProtocol.swift
 //  
 //
 //  Created by mengjiao on 8/17/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Endpoint {
+public protocol EndpointProtocol {
     // "HTTP or HTTPS"
     var scheme: String { get }
     
